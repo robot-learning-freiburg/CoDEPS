@@ -1,5 +1,5 @@
 # CoDEPS
-[**arXiv**](https://arxiv.org/abs/2303.10147) | [**Website**](http://codeps.cs.uni-freiburg.de/) | [**Video**](https://www.youtube.com/watch?v=)
+[**arXiv**](https://arxiv.org/abs/2303.10147) | [**Website**](http://codeps.cs.uni-freiburg.de/) | [**Video**](https://www.youtube.com/watch?v=4m4swaIkHyg)
 
 This repository is the official implementation of the paper:
 
