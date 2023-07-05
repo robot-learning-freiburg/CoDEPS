@@ -1,0 +1,50 @@
+model:
+    make_depth: True
+    make_sflow: False
+    make_semantic: True
+    make_instance: True
+
+    instance_head:
+        use_thing_mask: True
+
+train:
+    nof_epochs: 600
+    batch_size_per_gpu: 6
+    nof_workers_per_gpu: 10
+    optimizer:
+        learning_rate: 0.0001
+    scheduler:
+        type: 'StepLR'
+        step_lr:
+            step_size: 600
+
+val:
+    batch_size_per_gpu: 2
+    nof_workers_per_gpu: 10
+
+dataset:
+    name: 'cityscapes'
+    path: '/home/shared/codeps/data/cityscapes'
+    feed_img_size: [512, 1024]
+
+
+semantics:
+    class_weights: [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]
+    top_k: 0.2
+
+depth:
+    num_recon_scales: 5
+
+losses:
+    weights:
+        depth_recon: 10.0
+        depth_smth: 0.001
+        flow_smth: 10.0
+        flow_sparsity: 10.0
+        semantic: 1.0
+        center: 20.0
+        offset: .1
+        thing_mask: .5
+
+visualization:
+    scale: .5

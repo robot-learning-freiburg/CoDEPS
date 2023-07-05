@@ -1,0 +1,59 @@
+adapt:
+  mode: 'online'
+  model:
+    backbone_po_depth: False
+    backbone_pose_sflow: True
+    depth: True
+    pose: True
+    sflow: False
+    semantic: True
+    instance: False
+  ema:
+    # Do not forget to activate the models above and losses below
+    alpha: 0.99
+    semantic: True
+    instance: False
+  source_dataset:
+    name: 'cityscapes'
+    path: '/home/shared/codeps/data/cityscapes'
+    feed_img_size: [ 512, 1024 ]
+  target_dataset_adapt_ratio: 0.7
+  replay_sampler:
+    seed: 42
+    nof_source_samples: 2
+    nof_target_samples: 2
+  replay_buffer:
+    seed: 20
+    source_size: 300
+    target_size: 300
+    maximize_diversity: True
+    similarity_threshold: 0.95
+  mixup:
+    general:
+      active: True
+      mixup_strategies: ["cut_mixup", "cut_mixup"]
+      nof_samples: 2
+      geom_augment: True
+    conf_instance_mix:
+      conf_thresh: 0.98
+      min_inst_size: 2000
+    cut_mix:
+      nof_hor_splits: 4
+      nof_vert_splits: 2
+      nof_segments: 2
+
+dataset:
+  name: 'kitti_360'
+  path: '/home/shared/codeps/data/kitti_360'
+  feed_img_size: [384, 1408]
+  sequences: ['03']
+
+train:
+  nof_adaptation_steps: 1
+  nof_workers_per_gpu: 1
+
+visualization:
+  scale: 0.5
+
+logging:
+  log_step_interval: 10
