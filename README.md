@@ -46,6 +46,8 @@ The script file to pretrain CoDEPS can be found in `scripts/train.sh`. Before ex
 
 Additionally, ensure that the dataset path is set correctly in the corresponding config file, e.g., `cfg/train_cityscapes.yaml`.
 
+**Note:** We also provide the pretrained model weights at this link: https://drive.google.com/file/d/1KlIbYrzS6p8ymcuAJXy-DdHF8CqL2REc/view?usp=sharing
+
 ### Online Continual Learning
 
 To perform online continual learning, execute `scripts/adapt.sh`. Similar to the pretraining script, make sure to adapt all parameters before executing the script.
