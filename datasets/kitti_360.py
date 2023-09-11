@@ -371,9 +371,9 @@ class Kitti360(Dataset):
                 (34, 2),  # garage -> building
                 (12, 2),  # wall -> building
                 (13, 3),  # fence
-                (35, 4),  # gate -> fence
+                (35, 3),  # gate -> fence
                 (17, 4),  # pole
-                (37, 5),  # smallpole -> pole
+                (37, 4),  # smallpole -> pole
                 (20, 5),  # traffic sign
                 (21, 6),  # vegetation
                 (22, 7),  # terrain
